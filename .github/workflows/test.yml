@@ -13,7 +13,7 @@ jobs:
           cache: yarn
       - name: check
         run: |
-          node -e << 'CODE'
+          node << 'CODE'
           console.log([ ${{ join(github.event.commits.*.message, ',') }} ])
           CODE
 
