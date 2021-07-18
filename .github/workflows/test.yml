@@ -1,9 +1,6 @@
---
-
-name: FkGitCommitInfoStd
+---
 
 on: [push, pull_request]
-
 jobs:
   check:
     name: Check Commit Info
