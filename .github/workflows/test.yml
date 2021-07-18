@@ -1,4 +1,4 @@
----
+--
 
 name: FkGitCommitInfoStd
 
@@ -10,7 +10,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: test
       - run: |
           git log
 
