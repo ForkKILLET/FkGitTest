@@ -12,8 +12,8 @@ jobs:
           node-version: 16.x
           cache: yarn
       - name: check
-      - run: |
+        run: |
           node -e << 'CODE'
-          console.log([ ${{ join(github.event.commits.*.message, ",") }} ])
+          console.log([ ${{ join(github.event.commits.*.message, ',') }} ])
           CODE
 
