@@ -7,6 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+          cache: yarn
+      - name: check
       - run: |
-          echo ${{ join(github.event.commits.*.message) }}
+          node -e << 'CODE'
+          console.log([ ${{ join(github.event.commits.*.message, ",") }} ])
+          CODE
 
