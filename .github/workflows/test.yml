@@ -13,7 +13,4 @@ jobs:
           cache: yarn
       - name: check
         run: |
-          node << 'CODE'
-          console.log("${{ join(github.event.commits.*.message, '<--->') }}".split("<--->"))
-          CODE
-
+          ls
