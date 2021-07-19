@@ -6,18 +6,4 @@ jobs:
     name: Check Commit Info
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: 16.x
-          cache: yarn
-      - name: check
-        run: |
-          node << 'CODE'
-          const { S, I } = require("./check.js")
-          const A = require("./.gitmsgrc.js")
-          const M = ${{ toJson(github.event.commits.*.message) }}
-          const F = I(M, A)
-          process.exit(F)
-          CODE
-
+      - uses: forkkillet/FkGitCommitMsgStd@latest

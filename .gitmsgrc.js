@@ -1,6 +1,6 @@
 module.exports = {
 	debug: false,
-	itemTy: o => o.concat("M", "H", "D"),
+	itemTy: o => o.concat("*"),
 	checker: {
 		itemTy: N => {
 		if (N.l === 3 && N.c === "-")
