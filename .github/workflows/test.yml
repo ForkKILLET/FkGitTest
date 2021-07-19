@@ -13,4 +13,8 @@ jobs:
           cache: yarn
       - name: check
         run: |
-          ls
+          node << 'CODE'
+          const { I } = require("./check.js")
+          console.log(${{ toJson(github.event.commits.*.id) }})
+          CODE
+
