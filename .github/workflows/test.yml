@@ -14,7 +14,7 @@ jobs:
       - name: check
         run: |
           node << 'CODE'
-          const { I } = require("./check.js")
+          const { S, I } = require("./check.js")
           const M = JSON.parse(`${{ toJson(github.event.commits.*.message) }}`)
           const F = I(M, {
             debug: false,
