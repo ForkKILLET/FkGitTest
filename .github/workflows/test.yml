@@ -15,7 +15,7 @@ jobs:
         run: |
           node << 'CODE'
           const { S, I } = require("./check.js")
-          const M = JSON.parse(`${{ toJson(github.event.commits.*.message) }}`)
+          const M = ${{ toJson(github.event.commits.*.message) }}
           const F = I(M, {
             debug: false,
             itemTy: S.itemTy.concat("M", "H", "D"),
