@@ -6,4 +6,6 @@ jobs:
     name: Check Commit Info
     runs-on: ubuntu-latest
     steps:
-      - uses: forkkillet/FkGitCommitMsgStd@2.1.1
+      - uses: forkkillet/FkGitCommitMsgStd@2.3.0
+        with:
+          msgs: ${{ toJson(github.event.commits.*.message) }}
