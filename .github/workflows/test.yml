@@ -15,17 +15,9 @@ jobs:
         run: |
           node << 'CODE'
           const { S, I } = require("./check.js")
+          const A = require("./.gitmsgrc.js")
           const M = ${{ toJson(github.event.commits.*.message) }}
-          const F = I(M, {
-            debug: false,
-            itemTy: S.itemTy.concat("M", "H", "D"),
-            checker: {
-              itemTy: N => {
-                if (N.l === 3 && N.c === "-")
-                  throw `is root item, so shouldn't be "-" type`
-              }
-            }
-          })
+          const F = I(M, A)
           process.exit(F)
           CODE
 
