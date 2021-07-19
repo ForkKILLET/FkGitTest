@@ -10,6 +10,10 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 16.x
-      - uses: forkkillet/FkGitCommitMsgStd@test
-        with:
-          msgs: ${{ toJson(github.event.commits.*.message) }}
+      - name: Install fk-git-commit-msg-std
+        run: yarn add fk-git-commit-msg-std
+      - name: Run fk-git-commit-msg-std
+        env:
+          COMMIT_MSG: ${{ toJson(github.event.commits.*.message) }}
+        run: |
+          ./node_modules/fk-git-commit-msg-std/check.js -c "$PWD/.gitmsgrc.js" -e COMMIT_MSG

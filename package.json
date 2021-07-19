@@ -1,9 +1,0 @@
-{
-  "name": "FkGitTest",
-  "version": "0.1",
-  "main": "index.js",
-  "repository": "https://github.com/ForkFG/FkGitTest.git",
-  "author": "ForkΨKILLET <fork_killet@qq.com>",
-  "license": "MIT",
-  "private": true
-}
