@@ -16,4 +16,4 @@ jobs:
         env:
           COMMIT_MSG: ${{ toJson(github.event.commits.*.message) }}
         run: |
-          ./node_modules/fk-git-commit-msg-std/check.js -c "$PWD/.gitmsgrc.js" -e COMMIT_MSG
+          node ./node_modules/fk-git-commit-msg-std/check.js -c "$PWD/.gitmsgrc.js" -e COMMIT_MSG
